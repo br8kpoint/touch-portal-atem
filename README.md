@@ -34,7 +34,7 @@ Sample:
 
 ### On Event
 
-Use the built in "When plugin state changes" event to trigger changes such as visual indicators or perform actions
+Use "When the ATEM source is x" event to respond when a button is pressed on the atem. The sample below sets the OBS scene to a corresponding scene (at the bottom of the screenshot).
 
 Sample:
 
