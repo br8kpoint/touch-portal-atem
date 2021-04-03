@@ -9,9 +9,9 @@ const objectPath = require("object-path");
 const fs = require('fs');
 
 
-let rawdata = fs.readFileSync('settings.json');
+/*let rawdata = fs.readFileSync('settings.json');
 let settings = JSON.parse(rawdata);
-
+*/
 
 const { Atem } = require('atem-connection')
 const myAtem = new Atem();

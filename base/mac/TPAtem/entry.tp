@@ -1,0 +1,96 @@
+{
+  "sdk":3,
+  "version":4000,
+  "name":"Plugin to control ATEM mini switcher.",
+  "id":"TPATEMPlugin",
+  "configuration" : {
+    "colorDark" : "#992211",
+    "colorLight" : "#0033d3"
+  },
+  "plugin_start_cmd":"sh %TP_PLUGIN_FOLDER%TPAtem/start_tpatem.sh",
+  "categories": [
+    {
+      "id":"switching",
+      "name":"ATEM",
+      "imagepath":"%TP_PLUGIN_FOLDER%TPAtem/touch-portal-atem-24x24.png",
+      "actions": [
+        {
+          "id":"ATEM_SWITCH_SRC",
+          "prefix":"Switch the Source on the ATEM:",
+          "name":"Switch Source",
+          "tryInline":true,
+          "format":"Switch the source on the ATEM to {$source$}",
+          "type":"communicate",
+          "data": [
+            {
+              "id":"source",
+              "type":"choice",
+              "label":"Source",
+              "default":"1",
+              "valueChoices": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+              ]
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "id":"event_atem_src_changed",
+          "name":"When ATEM source is selected",
+          "format":"When the ATEM source is $val",
+          "type":"communicate",
+          "valueType":"choice",
+          "valueChoices":[
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "valueStateId":"ATEM_SOURCE"
+        }
+      ],
+      "states": [
+        {
+          "id":"ATEM_SOURCE",
+          "type":"choice",
+          "desc":"ATEM SOURCE",
+          "default":"1",
+          "valueChoices": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+          ]
+        }
+      ]
+    }
+  ],
+  "settings":[
+    {
+      "name":"AtemIP",
+      "default":"set to atem ip",
+      "type":"text",
+      "maxLenght":16,
+      "isPassword":false,
+      "minValue":0,
+      "maxValue":120,
+      "readOnly":false
+    }
+  ]
+}
