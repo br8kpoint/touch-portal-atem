@@ -1,5 +1,5 @@
 # touch-portal-atem
-This is a Touch Portal plugin that will let you control the ATEM mini switcher. Right now it only has bi-directional scene switching on the program.
+This is a Touch Portal plugin that will let you control the ATEM mini switcher. Right now it only has bi-directional source switching on the program.
 
 ## Goals:
 
