@@ -9,13 +9,15 @@ This is a Touch Portal plugin that will let you control the ATEM mini switcher. 
 
 ## Configuration
 
-There is a settings.json file in the plugin directory. It should be installed in %APPDATA%\touch-portal-atem on windows. Use this to set the atem ip address.
+Configuration is done in Touch Portal as of version 2.3.0. using the built in settings mechanism.
 
-```javascript
-{
-    "atem_ip": "x.x.x.x"
-}
-```
+1. Go to the Settings cog at the top right of the Touch Portal main window.
+2. Select the Plugins page.
+3. Select Plugin to control ATEM switchers from the list on that page.
+4. Enter the ip address of your ATEM in the AtemIP box.
+
+![Touch Portal ATEM Plugin Settings](Screenshots/TPAtemSettings.png)
+
 
 ## Touch Portal Setup
 
