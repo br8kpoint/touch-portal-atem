@@ -5,7 +5,7 @@ This is a Touch Portal plugin that will let you control the ATEM mini switcher. 
 
 1. The original goal is to combine it with the use of OBS to create complex scene switching so that at the touch of a touch portal button, the source can be changed on the ATEM and the scene will be  switched to a specified scene in OBS
 
-2. When the source on the ATEM is switched. The scene should also be switched in OBS. This works by hooking into the custom plugin state ATEM_SOURCE using the "When plugin state changes" built in event (under logic)
+2. When the source on the ATEM is switched. The scene should also be switched in OBS. This works by using the event "When the ATEM source is x" under the plugin.
 
 ## Configuration
 
