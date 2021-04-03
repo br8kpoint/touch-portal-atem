@@ -1,0 +1,25 @@
+{
+  "name": "touch-portal-atem",
+  "version": "1.0.0",
+  "description": "Touch Portal Plugin to control the ATEM mini switcher",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "pkg": "pkg .",
+    "pkg-win": "pkg --targets node12-win-x64 .",
+    "pkg-mac": "pkg --targets node12-macos-x64 ."
+  },
+  "repository": "https://github.com/br8kpoint/touch-portal-atem.git",
+  "author": "Mike Fair <br8kpoint@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "atem-connection": "2.1.1-nightly-20200917-210751-66bb5be.0",
+    "object-path": "^0.11.5",
+    "touchportal-api": "^2.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
