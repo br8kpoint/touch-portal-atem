@@ -54,6 +54,11 @@ Other plans (need to learn more about how the ATEM works):
 
 Those are the things I see off the top of my head. I know there is a ton more that the ATEM can do
 
+## Suuport
+
+Use the issues for this repository.
+
+Discuss how you use the plugin on discord https://discord.gg/e7g8MM2sKF
 
 Feel free to fork and contribute.
 
