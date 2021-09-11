@@ -1,7 +1,8 @@
 {
-  "sdk":2,
-  "version":1,
-  "name":"Plugin to control ATEM mini switcher.",
+  "sdk":3,
+  "version":1020,
+  "TPAtem_Version":"1.0.2",
+  "name":"Plugin to control ATEM switchers.",
   "id":"TPATEMPlugin",
   "configuration" : {
     "colorDark" : "#992211",
@@ -39,6 +40,60 @@
               ]
             }
           ]
+        },
+        {
+          "id":"ATEM_RUN_MACRO",
+          "prefix":"Run a macro on the ATEM:",
+          "name":"Run Macro",
+          "tryInline":true,
+          "format":"Run Macro {$availble_macros$}",
+          "type":"communicate",
+          "data": [
+            {
+              "id":"availble_macros",
+              "type":"choice",
+              "label":"Macro",
+              "default":"",
+              "valueChoices": [
+              ]
+            }
+          ]
+        },
+        {
+          "id":"ATEM_STOP_MACRO",
+          "prefix":"Stop the currently running macro",
+          "name":"Stop Macro",
+          "tryInline":true,
+          "format":"Stop Macro",
+          "type":"communicate",
+          "data": [
+            {
+              "id":"availble_macros",
+              "type":"choice",
+              "label":"Macro",
+              "default":"",
+              "valueChoices": [
+              ]
+            }
+          ]
+        },
+        {
+          "id":"ATEM_TOGGLE_MACRO_LOOP",
+          "prefix":"Toggle Mcro Loop",
+          "name":"Toggle Macro Loop",
+          "tryInline":true,
+          "format":"Toggle Macro Loop",
+          "type":"communicate",
+          "data": [
+            {
+              "id":"availble_macros",
+              "type":"choice",
+              "label":"Macro",
+              "default":"",
+              "valueChoices": [
+              ]
+            }
+          ]
         }
       ],
       "events": [
@@ -59,6 +114,17 @@
             "8"
           ],
           "valueStateId":"ATEM_SOURCE"
+        },
+        {
+          "id":"event_atem_running_macro",
+          "name":"When running ATEM marcro is",
+          "format":"When the running ATEM macro is $val",
+          "type":"communicate",
+          "valueType":"choice",
+          "valueChoices":[
+            
+          ],
+          "valueStateId":"ATEM_RUNNING_MACRO"
         }
       ],
       "states": [
@@ -77,6 +143,24 @@
             "7",
             "8"
           ]
+        },
+        {
+          "id":"ATEM_RUNNING_MACRO",
+          "type":"text",
+          "desc":"ATEM RUNNING MACRO",
+          "default":""
+        },
+        {
+          "id":"ATEM_MACRO_LOOP",
+          "type":"text",
+          "desc":"ATEM MACRO LOOP?",
+          "default":""
+        },
+        {
+          "id":"ATEM_MACRO_IS_RUNNING",
+          "type":"text",
+          "desc":"ATEM MACRO IS RUNNING?",
+          "default":""
         }
       ]
     }

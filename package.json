@@ -1,6 +1,6 @@
 {
   "name": "tpatem",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Touch Portal Plugin to control the ATEM mini switcher",
   "main": "src/index.js",
   "bin": "src/index.js",
@@ -9,8 +9,8 @@
     "pkg": "pkg .",
     "pkg-win": "pkg --targets node12-win-x64 .",
     "pkg-mac": "pkg --targets node12-macos-x64 .",
-    "build-win": "pkg --targets node12-win-x64 . && move tpatem.exe base/win/TPAtem/ && del Installers\\TPAtem-Win.tpp && cd base\\win && 7z a -tzip ../../Installers/TPAtem-Win.tpp TPAtem",
-    "build-mac": "pkg --targets node12-macos-x64 . && move tpatem base/mac/TPAtem/ && del Installers\\TPAtem-Mac.tpp && cd base\\mac && 7z a -tzip ../../Installers/TPAtem-Mac.tpp TPAtem"
+    "build-win": "pkg --targets node12-win-x64 . && mv tpatem.exe base/win/TPAtem/ && rm Installers/TPAtem-Win.tpp && cd base/win && 7z a -tzip ../../Installers/TPAtem-Win.tpp TPAtem",
+    "build-mac": "pkg --targets node12-macos-x64 . && mv tpatem base/mac/TPAtem/ && rm Installers/TPAtem-Mac.tpp && cd base/mac && 7z a -tzip ../../Installers/TPAtem-Mac.tpp TPAtem"
   },
   "repository": "https://github.com/br8kpoint/touch-portal-atem.git",
   "author": "Mike Fair <br8kpoint@gmail.com>",
