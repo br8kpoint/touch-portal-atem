@@ -114,17 +114,6 @@
             "8"
           ],
           "valueStateId":"ATEM_SOURCE"
-        },
-        {
-          "id":"event_atem_running_macro",
-          "name":"When running ATEM marcro is",
-          "format":"When the running ATEM macro is $val",
-          "type":"communicate",
-          "valueType":"choice",
-          "valueChoices":[
-            
-          ],
-          "valueStateId":"ATEM_RUNNING_MACRO"
         }
       ],
       "states": [
