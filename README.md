@@ -1,5 +1,39 @@
-# touch-portal-atem
-This is a Touch Portal plugin that will let you control the ATEM mini switcher. Right now it only has bi-directional scene switching on the program.
+# Touch Portal Plugin To Control ATEM Switchers
+![](https://img.shields.io/github/downloads/br8kpoint/touch-portal-atem/total)
+
+- [Touch Portal Plugin to Control ATEM switchers](#touch-portal-plugin-to-control-atem-switchers)
+  - [Description](#description)
+  - [ChangeLog](#changelog)
+  - [Goals](#goals)
+  - [Intallation and Configuration](#installation-and-configuration)
+  - [Usage](#usage)
+    - [Button Press](#button-press)
+    - [On Event](#on-event)
+    - [States](#states)
+  - [Roadmap](#roadmap)
+
+## Description:
+This is a Touch Portal plugin that will let you control the ATEM switchers. Right now it only has bi-directional scene switching on the program. **Latest Update** has support for ***macros***
+
+## ChangeLog
+```
+v1.0.0 - First release
+  Additions:
+    - Action for Program Source Changes
+    - State for Program Souce
+    - Event for Program Souce
+		- This is a convenience function to easily set up actions when the source changes. It's better to use the When Plugin State Changes for more flexibility
+v1.1.0
+  - Action for Run Macro
+  - Action to toggle Macro loop
+  - Action to Stop Macro
+  - State for Atem Running Macro
+    - This is the macro name
+  - State for if ATEM MACRO IS RUNNING? (true/false)
+  - State for ATEM MACRO LOOP? (true/false)
+  
+```
+
 
 ## Goals:
 
@@ -7,28 +41,32 @@ This is a Touch Portal plugin that will let you control the ATEM mini switcher. 
 
 2. When the source on the ATEM is switched. The scene should also be switched in OBS. This works by hooking into the custom plugin state ATEM_SOURCE using the "When plugin state changes" built in event (under logic)
 
-## Configuration
+## Installation and Configuration
 
-There is a settings.json file in the plugin directory. It should be installed in %APPDATA%\touch-portal-atem on windows. Use this to set the atem ip address.
+The plugin has been updated so that it now uses Touch Portal v 2.3.0 as a minimum. Touch Portal 2.3.0 has built in plugin configuration settings.
 
-```javascript
-{
-    "atem_ip": "x.x.x.x"
-}
-```
-
-## Touch Portal Setup
+1. Click the Settings Cog at the top right of main Touch Portal window.
+2. Select the Plugins page
+3. Select the 
+![Touch Portal ATEM Settings](Screenshots/TPAtemSettings.png)
+## Usage
 
 
 ### Button Press
 
-Setup a button press using the action of "Set the source of the ATEM to x"
+* Setup a button press using the action of "Set the source of the ATEM to x"
 
 You can also combine it with other actions from OBS or any other TP action to do whatever you want!
 
 Sample:
 
-![Sample Touch Portal ATEM OnPress action](Screenshots/OnPress.png)
+![Sample Touch Portal ATEM Source action](Screenshots/OnPress.png)
+
+* Run a macro using the action of "Run Macro" and select the macro from the list.
+
+Sample:
+
+![Sample Touch Portal ATEM Run Macro action](Screenshots/RunMacro.png)
 
 ### On Event
 
@@ -38,6 +76,14 @@ Sample:
 
 ![Sample Touch Portal ATEM OnEvent](Screenshots/OnEvent.png)
 
+### States
+
+![ATEM States](Screenshots/TPATEMStates.png)
+
+* ATEM SOURCE - The current progtam souce selected on the atem
+* ATEM RUNNING MACRO - The name of the currently running macro
+* ATEM MACRO LOOP? - true/false value if the macro loop is enabled
+* ATEM MACRO IS RUNNING? - true/false value if a macro is running
 
 ## Roadmap
 
