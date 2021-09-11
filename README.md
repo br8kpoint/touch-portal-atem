@@ -39,17 +39,21 @@ v1.1.0
 
 1. The original goal is to combine it with the use of OBS to create complex scene switching so that at the touch of a touch portal button, the source can be changed on the ATEM and the scene will be  switched to a specified scene in OBS
 
-2. When the source on the ATEM is switched. The scene should also be switched in OBS. This works by hooking into the custom plugin state ATEM_SOURCE using the "When plugin state changes" built in event (under logic)
+2. When the source on the ATEM is switched. The scene should also be switched in OBS. This works by using the event "When the ATEM source is x" under the plugin.
 
 ## Installation and Configuration
 
-The plugin has been updated so that it now uses Touch Portal v 2.3.0 as a minimum. Touch Portal 2.3.0 has built in plugin configuration settings.
+Configuration is done in Touch Portal as of version 2.3.0. using the built in settings mechanism.
 
-1. Click the Settings Cog at the top right of main Touch Portal window.
-2. Select the Plugins page
-3. Select the 
-![Touch Portal ATEM Settings](Screenshots/TPAtemSettings.png)
-## Usage
+1. Go to the Settings cog at the top right of the Touch Portal main window.
+2. Select the Plugins page.
+3. Select Plugin to control ATEM switchers from the list on that page.
+4. Enter the ip address of your ATEM in the AtemIP box.
+
+![Touch Portal ATEM Plugin Settings](Screenshots/TPAtemSettings.png)
+
+
+## Touch Portal Setup
 
 
 ### Button Press
@@ -70,7 +74,7 @@ Sample:
 
 ### On Event
 
-Use the built in "When plugin state changes" event to trigger changes such as visual indicators or perform actions
+Use "When the ATEM source is x" event to respond when a button is pressed on the atem. The sample below sets the OBS scene to a corresponding scene (at the bottom of the screenshot).
 
 Sample:
 
@@ -98,6 +102,11 @@ Other plans (need to learn more about how the ATEM works):
 
 Those are the things I see off the top of my head. I know there is a ton more that the ATEM can do
 
+## Suuport
+
+Use the issues for this repository.
+
+Discuss how you use the plugin on discord https://discord.gg/e7g8MM2sKF
 
 Feel free to fork and contribute.
 
